@@ -1,0 +1,21 @@
+version: "3"
+
+tasks:
+  init_tables:
+    aliases:
+      - tables
+    desc: "Create tables for db"
+    cmds:
+      - migrate -path ./migrations -database "postgres://postgres:12345@localhost:5432/postgres?sslmode=disable" up
+
+  drop_tables:
+    aliases:
+      - tables
+    desc: "Create tables for db"
+    cmds:
+      - migrate -path ./migrations -database "postgres://postgres:12345@localhost:5432/postgres?sslmode=disable" up
+
+  run_postgres:
+    desc: "Run docker postgres container"
+    cmds: 
+      - docker run --name=rest_grpc_db -e POSTGRES_PASSWORD=12345 -p 5432:5432 -d --rm postgres

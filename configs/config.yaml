@@ -1,0 +1,11 @@
+port: "8000"
+client:
+    address: "localhost:9090" 
+    token: "rest-token"
+
+db:		
+    host:     "localhost"
+    port:     "5432"
+    username: "postgres"
+    dbname:   "postgres"
+    sslmode:  "disable"
