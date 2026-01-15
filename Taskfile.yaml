@@ -11,7 +11,7 @@ tasks:
   drop_tables:
     aliases:
       - tables
-    desc: "Create tables for db"
+    desc: "Drop tables for db"
     cmds:
       - migrate -path ./migrations -database "postgres://postgres:12345@localhost:5432/postgres?sslmode=disable" up
 
